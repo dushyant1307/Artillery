@@ -1,0 +1,31 @@
+config:
+  target: https://scorekeeperdev.azurewebsites.net/Login
+  phases:
+  - duration: 180
+    arrivalRate: 3
+    rampTo: 10
+    name: Warm up the API
+  - duration: 180
+    arrivalRate: 10
+    rampTo: 50
+    name: Ramp up to peak load
+  - duration: 300
+    arrivalRate: 50
+    name: Sustained peak load
+  payload:
+    - path: ./UserCsv-vk.csv
+      fields:
+        - "UserName"
+        - "Password"
+      skipHeader: true
+  # Enable the Playwright engine:
+  engines:
+    playwright:
+      defaultTimeout: 600000
+      launchOptions:
+        headless: true
+  processor: "./flows.js"
+scenarios:
+  - engine: playwright
+    flowFunction: "helloFlow"
+    flow: []
