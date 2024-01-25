@@ -25,7 +25,8 @@ jobs:
         run: |
           npm install
           bun install
-          PLAYWRIGHT_BROWSERS_PATH=/github/home/.cache/ms-playwright npx playwright install
+          ls
+          PLAYWRIGHT_BROWSERS_PATH=/home/.cache/ms-playwright npx playwright install
  
       - name: Execute load tests
         uses: artilleryio/action-cli@v1
