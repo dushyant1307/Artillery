@@ -5,7 +5,7 @@ on:
  
 jobs:
   artillery:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
  
     steps:
       - name: Checkout code
@@ -25,9 +25,7 @@ jobs:
         run: |
           npm install
           bun install
-          ls
-          PLAYWRIGHT_BROWSERS_PATH=/home/.cache/ms-playwright npx playwright install
- 
+          
       - name: Execute load tests
         uses: artilleryio/action-cli@v1
         with:
