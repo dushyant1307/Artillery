@@ -24,7 +24,9 @@ jobs:
       - name: Execute load tests
         uses: artilleryio/action-cli@v1
         with:
-          command: run hello-world.yml --output ./report.json
+          run: |
+            npx playwright@1.39.0 install
+            run hello-world.yml --output ./report.json
         
       - name: Upload artifact
         uses: actions/upload-artifact@v3
