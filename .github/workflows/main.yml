@@ -26,7 +26,7 @@ jobs:
           npm install
           bun install
           npx playwright@1.39.0 install
-          cd ./github/home/.cache/ms-playwright
+          cd ./home/.cache/ms-playwright
           ls
  
       - name: Execute load tests
