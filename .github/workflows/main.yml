@@ -20,6 +20,9 @@ jobs:
         run: |
           npm install
           npx playwright@1.39.0 install
+          cd
+          ls
+          cd /github
           
       - name: Execute load tests
         uses: artilleryio/action-cli@v1
