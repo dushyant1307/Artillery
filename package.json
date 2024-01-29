@@ -1,10 +1,13 @@
 {
   "dependencies": {
+    "artillery": "^2.0.4",
     "playwright": "^1.41.0"
   },
   "devDependencies": {
     "@playwright/test": "^1.41.0",
     "@types/node": "^20.11.5"
   },
-  "scripts": {}
+  "scripts": {
+    "loadtest": "npx artillery run hello-world.yml"
+  }
 }
