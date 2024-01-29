@@ -29,4 +29,4 @@ jobs:
         with:
           name: artillery-report
           # Reference the generated report in the file system.
-          path: ./report.json
+          path: report.json
