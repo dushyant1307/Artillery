@@ -1,0 +1,31 @@
+name: Load Test
+
+on:
+    workflow_dispatch:
+ 
+jobs:
+  artillery:
+    runs-on: ubuntu-latest
+ 
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: |
+          npm install
+          npx playwright@1.39.0 install
+          npm run loadtest
+        
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: artillery-report
+          # Reference the generated report in the file system.
+          path: ./report.json
