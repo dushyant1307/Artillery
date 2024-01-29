@@ -15,7 +15,7 @@ async function helloFlow(page, vuContext, events, test) {
 
  
   await step("submit_login", async () => {
-    await page.goto('https://scorekeeperdev.azurewebsites.net/Login',timeout = 0);
+    await page.goto('https://scorekeeperdev.azurewebsites.net/Login');
     await page.getByPlaceholder('Enter your Username').click();
     await page.getByPlaceholder('Enter your Username').fill(UserName);
     await page.getByPlaceholder('Enter your password').click();

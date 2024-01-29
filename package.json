@@ -8,6 +8,6 @@
     "@types/node": "^20.11.5"
   },
   "scripts": {
-    "loadtest": "npx artillery run hello-world.yml"
+    "loadtest": "npx artillery run hello-world.yml --output ./report.json"
   }
 }
